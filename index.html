@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+学マス 後イベ解析ツール Ver1.3
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+学園アイドルマスター<br>
+後イベ解析ツール Ver1.3
+</h1>
+
+
+
+
+
+<section class="box">
+
+
+<h2>
+今回の育成入力
+</h2>
+
+
+
+<p>
+
+シナリオ：
+
+<select id="scenarioSelect">
+
+
+<option value="初レジェンド">
+初レジェンド
+</option>
+
+
+<option value="NIAマスター">
+NIAマスター
+</option>
+
+
+<option value="HIF予選" selected>
+HIF予選
+</option>
+
+
+<option value="HIF本選">
+HIF本選
+</option>
+
+
+</select>
+
+</p>
+
+
+
+
+<p>
+
+週数：
+
+<span id="weekCount">
+16
+</span>
+
+週
+
+</p>
+
+
+
+
+
+
+<p>
+
+後イベント総数：
+
+<input
+id="totalEvents"
+type="number"
+value="12"
+min="1"
+max="12"
+>
+
+</p>
+
+<label>
+協力者名：
+<input type="text" id="collectorName" placeholder="名前を入力">
+</label>
+
+
+
+
+<p>
+
+現在残り後イベ：
+
+<span id="remainingDisplay">
+10
+</span>
+
+個
+
+</p>
+
+
+
+
+<h3>
+週ごとの記録
+</h3>
+
+
+<div class="inputLayout">
+
+
+<div class="weekBox">
+
+<h3>
+週ごとの記録
+</h3>
+
+
+<button id="fillNoneButton">
+
+全週を×にする
+
+</button>
+
+
+<div id="weekArea">
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="dataBox">
+
+<h3>
+保存データ
+</h3>
+
+
+<p>
+
+保存済み育成数：
+
+<span id="runCount">
+0
+</span>
+
+回
+
+</p>
+
+
+
+<button id="analyzeButton">
+
+全データ解析
+
+</button>
+
+
+<br>
+
+
+<button id="exportButton">
+
+データを書き出す
+
+</button>
+
+
+<br><br>
+
+
+<label>
+
+バックアップ読み込み：
+
+</label>
+
+
+<input
+type="file"
+id="importFile"
+accept=".json"
+>
+
+
+
+<br>
+
+
+<button id="importButton">
+
+データを復元
+
+</button>
+
+
+<br><br>
+
+
+<button id="clearButton">
+
+保存データ削除
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<button id="saveRunButton">
+
+この育成を保存
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="box">
+
+
+<h2>
+解析結果
+</h2>
+
+
+<div class="analysisArea">
+
+    <div id="analysisSummary"></div>
+
+    <div id="result"></div>
+
+    <div id="weekResult"></div>
+
+    <div id="matrixResult"></div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<section class="box">
+
+
+<h2>
+グラフ
+</h2>
+
+
+<canvas id="chart"></canvas>
+
+
+</section>
+
+
+
+
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

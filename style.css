@@ -101,7 +101,7 @@ h1 {
 
     grid-template-columns:repeat(2, 1fr);
 
-    grid-template-rows:repeat(9, auto);
+    grid-template-rows:repeat(10, auto);
 
     grid-auto-flow:column;
 
